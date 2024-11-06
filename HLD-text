@@ -1,0 +1,18 @@
+
+-login/sign-up page
+    -sign in/ sign up form
+    - once logged-in then redirect to browse
+
+
+-browse [if the authnticatio is true]
+    -headers
+        -mainMovie
+            -Tailor at the background
+            -title and description
+            -Movie Suggestions
+                -Movie list [n no.]
+
+-Search-bar 
+    -search bar
+        -Movie suggestions                
+
