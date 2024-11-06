@@ -1,4 +1,5 @@
-#project-setup
+# Project-configurations
+
 ## create-react-app [scaffold of react app]
 ``` 
 npx create-react-app
