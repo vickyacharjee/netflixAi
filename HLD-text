@@ -12,7 +12,14 @@
             -Movie Suggestions
                 -Movie list [n no.]
 
+
+            - browse contains 2 mains sections 
+                -primary container [video at the background and title of the video]
+                -secondary conainer [n no. of movies list and n no. of cards]
+
 -Search-bar 
     -search bar
-        -Movie suggestions                
+        -Movie suggestions        
+
+
 

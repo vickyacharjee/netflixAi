@@ -1,12 +1,13 @@
-
-import './App.css';
+import { Provider } from 'react-redux';
+import Body from './Components/Body';
+import appStore from './store/appStore';
 
 function App() {
-  return (
-    <div className="text-xl border">
-      hello everyone
-    </div>
-  );
+  return(
+    <Provider store={appStore}>
+     <Body/>
+  </Provider>
+  )
 }
 
 export default App;
