@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
   return (
     <div className='w-screen'>
-      <iframe className='w-screen aspect-video'
+      <iframe className='w-screen aspect-video bg-gradient-to-r from bg-black-100'
         src={"https://www.youtube.com/embed/"+trailerVideo+"?&autoplay=1&mute=1"}
         
         title="YouTube video player" 

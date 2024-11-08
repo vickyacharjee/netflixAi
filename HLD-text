@@ -15,11 +15,26 @@
 
             - browse contains 2 mains sections 
                 -primary container [video at the background and title of the video]
-                -secondary conainer [n no. of movies list and n no. of cards]
+                -secondary conainer [n no. of movies list and n no. of cards] trending, nowPlaying etc
 
 -Search-bar 
-    -search bar
-        -Movie suggestions        
+    -search bar [toggleFeature, toggle-Naming]
+    -Movie suggestions        
+
+
+- Search bar / Component GPT API:
+
+-MultiLingual 
+    ->2 file on constants:
+        1.  langFile
+        2.  language identifier
+
+    ->map everthing into header component and updating the store withthe current language code.
+
+
+    -> subscribbing at gptSearchbar currently and tranformd dynamically palceholder and search button.
+
+            
 
 
 

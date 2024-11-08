@@ -3,6 +3,7 @@ import Header from './Header'
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { checkFormValidate } from '../Utils/formValidation';
 import { auth } from '../Utils/firebase';
+import { BG_Cover } from '../Utils/constants';
 
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
     setIsSignForm(!isSignForm)
   }
 
-  const email=useRef(null);
+  const email=useRef();
   const password=useRef(null);
   const handleOnclickButton=()=>{
       const message=checkFormValidate(email.current.value,password.current.value);
@@ -54,7 +55,7 @@ const Login = () => {
       <Header/>
       
       <div className='absolute'>
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/aad37504-bbe0-407d-b8a8-fb31b8faf374/web_tall_panel/IN-en-20241028-TRIFECTA-perspective_2f496d82-4466-44ef-b581-9d69138a2914_large.jpg" alt="" />
+        <img src={BG_Cover} alt="" />
       </div>
 
       <form onSubmit={(e)=>e.preventDefault()} className='w-3/12  absolute p-12 bg-black my-36 mx-auto left-0 right-10 text-white bg-opacity-80 rounded-xl' action="">
