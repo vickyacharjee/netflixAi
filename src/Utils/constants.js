@@ -7,7 +7,7 @@ export const apiOption = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMTQ5ZGU0NTZiZTQwODZjMzhkZDk1M2I2ZGZlYjVlMiIsIm5iZiI6MTczMDk1ODU1Ni41NjQyNTc5LCJzdWIiOiI2NzJjNTA0NTVhMjA0NTkyMDc0MTNhZmYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Lf3Evm3L4ImOLHYrrsNj5SuniFemeJvvlF5c8YqqAC8'
+    Authorization: 'Bearer '+process.env.REACT_APP_tmdbApi
   }
 };
 
@@ -26,3 +26,8 @@ export const SUPPORTED_LANG=[
     name:"Bengali"
   }
 ]
+
+export const gptApi=process.env.REACT_APP_gptApi
+
+
+

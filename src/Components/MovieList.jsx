@@ -21,7 +21,7 @@ const MovieList = ({ title, movies }) => {
         `}
       </style>
       
-      <h1 className='text-3xl font-bold p-2 text-white'>{title}</h1>
+      <h1 className='text-3xl font-bold p-2 text-white'>{title.substring(0,1).toUpperCase()+title.substring(1)}</h1>
       <div className='flex overflow-x-scroll movie-scroll'>
         <div className='flex'>
           {
@@ -30,7 +30,7 @@ const MovieList = ({ title, movies }) => {
                 <MovieCards key={movie.id} posterPath={movie?.poster_path} />
               ))
             ) : (
-              <p className="text-white">No movies available</p>  // Fallback if movies is null or empty
+              <p className="text-white">No movies available</p>  
             )
           }
         </div>

@@ -1,6 +1,8 @@
 import Login from './Login'
 import Browse from './Browse'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import Error from './Error'
+
 
 
 const Body = () => {
@@ -8,12 +10,13 @@ const Body = () => {
     const appRouter=createBrowserRouter([
         {
             path:"/",
-            element:<Login/>
+            element:<Login/>,
+            errorElement:<Error/>
         },
         {
             path:"/browse",
-            element:<Browse/>
-        }
+            element:<Browse/>,
+        },
     ])
   return (
     <div>
