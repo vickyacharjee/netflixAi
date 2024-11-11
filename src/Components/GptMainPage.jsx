@@ -7,7 +7,7 @@ const GptMainPage = () => {
   return (
     <div>
       <div className='fixed -z-10'>
-        <img src={BG_Cover} alt="" />
+        <img className='h-screen object-cover' src={BG_Cover} alt="" />
       </div>
       <GptSearchBar/>
       <GptMovieSuggestions/>

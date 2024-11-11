@@ -9,7 +9,6 @@ const GptMovieSuggestions = () => {
   const {movieNames,movieLists}=gpt;
   if (!movieNames) return null;
   
-  
       if (movieNames.length===0) {
         return(
           <Error/>
