@@ -106,5 +106,7 @@ module.exports = {
 @tailwind utilities;
 ``` 
 
+## add FireBase to the project for authentication and fire Hosting for deployement
+
 
 
