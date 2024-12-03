@@ -4,6 +4,7 @@ import lang from "../Utils/languageConstant"
 import openai from "../Utils/openAi"
 import { apiOption } from '../Utils/constants'
 import { addGptMoviesResult } from '../store/gptSlice'
+import { shimmer } from '../store/gptSlice'
 
 
 const GptSearchBar = () => {
@@ -11,6 +12,7 @@ const GptSearchBar = () => {
     const isPageActive=useSelector(store=>store.gpt.movieNames)
     const searchText=useRef(null);
     const dispatch=useDispatch()
+    const showShimmer=useSelector(store=>store.gpt.shimmer)
 
     const TmdbMovie = async (movie) => {
       const data = await fetch(
@@ -40,10 +42,16 @@ const GptSearchBar = () => {
         // Resolve all promises with Promise.all
         const movieResults = await Promise.all(ArrayData);
         dispatch(addGptMoviesResult({movieNames:gptMovie,movieLists:movieResults}))
+        dispatch(shimmer(true))
     
         console.log(movieResults); // This should now contain an array of movie results from TMDB
       } catch (error) {
         console.error("Error fetching data from API:", error);
+      }finally {
+        console.log("Search operation completed."); // This will always execute
+        setTimeout(()=>{
+          dispatch(shimmer(false))
+        },2000)
       }
     };
 
@@ -55,7 +63,9 @@ const GptSearchBar = () => {
 
   return (
     <div className='pt-[10%] flex justify-center'>
-        <form onClick={(e)=>e.preventDefault()} className=' w-full mt-20 md:w-1/2  bg-black grid grid-cols-11 rounded-xl' action="">
+      
+        <form onClick={(e)=>e.preventDefault()} className=' w-full mt-20 md:w-1/2  bg-black grid grid-cols-12 rounded-xl' action="">
+      {showShimmer && <img  className='h-20' src="https://media.tenor.com/-7LKYbNbLiIAAAAj/vodafone-greece-vodafone.gif" alt="" /> }
             <input ref={searchText} className='p-4 m-4 col-span-9 rounded-lg' type="text" placeholder={lang[langKey].gptSearchPlaceholder} />
             <button className='mx-auto  md: col-span-2 m-4 py-2 px-4 bg-red-500 text-white rounded-lg' onClick={handleSearch}>{lang[langKey].search}</button>
             {

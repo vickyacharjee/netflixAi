@@ -9,11 +9,7 @@ const GptMovieSuggestions = () => {
   const {movieNames,movieLists}=gpt;
   if (!movieNames) return null;
   
-      if (movieNames.length===0) {
-        return(
-          <Error/>
-        )
-      }
+    
       return (
         <div className='p-4 m-4 bg-black text-white bg-opacity-80'>
           {/* <MovieList title={movieNames[0]} movies={movieLists[0]}/>
@@ -23,7 +19,9 @@ const GptMovieSuggestions = () => {
           <MovieList title={movieNames[4]} movies={movieLists[4]}/> */}
 
           {
-            movieLists.map((movie,index)=><MovieList title={movieNames[index]} movies={movie} />)
+            movieLists.map((movie,index)=>(
+            <MovieList title={movieNames[index]} movies={movie} />
+            ))
           }
         </div>
       )

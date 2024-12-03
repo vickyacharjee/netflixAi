@@ -8,8 +8,9 @@ import useTopRated from '../hooks/useTopRated'
 import useUpcoming from '../hooks/useUpcoming'
 import GptSearch from './GptMainPage'
 import { useSelector } from 'react-redux'
+import { Helmet } from 'react-helmet'
 const Browse = () => {
-
+ 
   const showGptSearch=useSelector(store=>store.gpt.showGptSearch)
   
   

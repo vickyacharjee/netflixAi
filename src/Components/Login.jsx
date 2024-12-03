@@ -6,7 +6,9 @@ import { auth } from '../Utils/firebase';
 import { BG_Cover } from '../Utils/constants';
 
 
+
 const Login = () => {
+    
   const [isSignForm,setIsSignForm]=useState(true); 
   const [errorMessage,setErrorMessage]=useState(null);
 
@@ -62,7 +64,7 @@ const Login = () => {
        <h1 className='font-bold text-3xl py-3'>{isSignForm ? "Sign-In" : "Sign-Up"}</h1>
         { !isSignForm && <input type="text" placeholder='Enter ur Name' className='bg-gray-700 p-4 my-4 w-full rounded-lg' />}
         <input ref={email} type="text" placeholder='Email-address' className='bg-gray-700 p-4 my-4 w-full rounded-lg' />
-        <input ref={password} type="text" placeholder='paswosrd' className='bg-gray-700 p-4 my-4 w-full rounded-lg' />
+        <input ref={password} type="text" placeholder='pasword' className='bg-gray-700 p-4 my-4 w-full rounded-lg' />
         <p className='text-red-700 font-bold py-2 text-xl '> {errorMessage}</p>
         <button className='p-2  bg-red-700 w-full rounded-lg' onClick={handleOnclickButton}>{isSignForm ? "Sign-In" : "Sign-Up"}</button>
         <p onClick={toggleSignInForm} className='p-4 cursor-pointer hover:text-blue-300 '>{isSignForm ? "new to Netflix?  Signup here" : "already a user"}</p>

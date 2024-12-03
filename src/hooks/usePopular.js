@@ -13,7 +13,7 @@ const usePopular=()=> {
  const getPopular= async ()=>{
      const data= await fetch('https://api.themoviedb.org/3/movie/popular',apiOption);
      const json=await data.json();
-     
+    
      
      dispatch(addPopular(json.results))
     }

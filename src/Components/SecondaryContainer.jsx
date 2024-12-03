@@ -4,6 +4,7 @@ import MovieList from "./MovieList"
 
 const SecondaryContainer = () => {
   const movies=useSelector(store=>store?.movies)
+  const addMovieShimmer=useSelector(store=>store?.movies?.addNowPlayingMovies)
   
   if (movies.length===0) {
     return(
@@ -15,7 +16,7 @@ const SecondaryContainer = () => {
     return (
         <div className='bg-black '>
             <div className='-mt-48 relative z-20'>
-            <MovieList title={"Now Playing"} movies={movies?.addNowPlayingMovies}/>
+            {addMovieShimmer ? <MovieList title={"Now Playing"} movies={movies?.addNowPlayingMovies}/> : <h1 className='p-4 m-4 bg-white'>Loading</h1>}
             <MovieList title={"Top-Rated videos"} movies={movies?.addTopRated}/>
             <MovieList title={"Popular"} movies={movies?.addPopular}/>
             <MovieList title={"Up-Coming Movies"} movies={movies?.addUpcoming}/>
